@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Mark Attendance via Face Recognition</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Mark Attendance</h1>
+        <nav>
+          <ul>
+            <li><a href="./login.html">Login</a></li>
+            <li><a href="./attendance.html">Attendance</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="container">
+      <h2>Mark Attendance using Face Recognition</h2>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul style="color:red;">
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+      <form method="post" enctype="multipart/form-data">
+        <label for="image">Upload Image:</label><br>
+        <input type="file" id="image" name="image" accept="image/*" required><br><br>
+        <input type="submit" value="Mark Attendance">
+      </form>
+    </div>
+    
+    <footer>
+      <p>&copy; 2025 Student Attendance System</p>
+    </footer>
+  </body>
+</html>
