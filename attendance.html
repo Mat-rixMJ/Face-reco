@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Attendance Record</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Attendance Record</h1>
+        <nav>
+          <ul>
+            <li><a href="./attendance.html">Attendance</a></li>
+            <li><a href="./logout.html">Logout</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="container">
+      <h2>Attendance for {{ name }}</h2>
+      {% if records %}
+        <table>
+          <tr>
+            <th>Date</th>
+            <th>Status</th>
+          </tr>
+          {% for record in records %}
+          <tr>
+            <td>{{ record['date'] }}</td>
+            <td>{{ record['status'] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      {% else %}
+        <p>No attendance records found.</p>
+      {% endif %}
+    </div>
+    
+    <footer>
+      <p>&copy; 2025 Student Attendance System</p>
+    </footer>
+  </body>
+</html>
